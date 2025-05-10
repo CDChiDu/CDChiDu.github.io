@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>ChiDuCD</title>
+    <title>关于Hexo建站的教程 | ChiDuCD</title>
     <meta name="author" content="ChiDuCD" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -42,7 +42,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -152,40 +154,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/wallpaper.png"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>ChiDuCD</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>关于Hexo建站的教程</h1>
     </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2025/05/04/experience/">
-        <h2 class="post-title">关于Hexo建站的教程</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -195,80 +168,46 @@
         
         
     </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我从2020年开始着手建站，中途使用过<a target="_blank" rel="noopener" href="http://www.jianzhanba.top/">建站吧</a>、<a target="_blank" rel="noopener" href="https://www.sxl.cn/">上线了</a>这种一站式建站，尝试过用<a target="_blank" rel="noopener" href="https://wordpress.org/">Wordpress</a>部署到服务器商的免费服务器上面，还试过用<a target="_blank" rel="noopener" href="https://gohugo.io/">hugo框架</a>部署到GitHub服务器上面，但最后的结果分别是放弃使用、莫名暴毙和中道崩殂。使用Hexo框架建站也不是一帆风顺，就把踩过的坑和经验总结起来写一篇面向小白的Hexo建站教程。</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2025/05/04/experience/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/05/02/hello-world/">
-        <h2 class="post-title">网站起点</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/5/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="一段测试文本"><a href="#一段测试文本" class="headerlink" title="一段测试文本"></a>一段测试文本</h2><h3 id="awa"><a href="#awa" class="headerlink" title="awa"></a>awa</h3>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-        
-    </div>
-    <a href="/2025/05/02/hello-world/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
+    <div class="content" v-pre>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我从2020年开始着手建站，中途使用过<a target="_blank" rel="noopener" href="http://www.jianzhanba.top/">建站吧</a>、<a target="_blank" rel="noopener" href="https://www.sxl.cn/">上线了</a>这种一站式建站，尝试过用<a target="_blank" rel="noopener" href="https://wordpress.org/">Wordpress</a>部署到服务器商的免费服务器上面，还试过用<a target="_blank" rel="noopener" href="https://gohugo.io/">hugo框架</a>部署到GitHub服务器上面，但最后的结果分别是放弃使用、莫名暴毙和中道崩殂。使用Hexo框架建站也不是一帆风顺，就把踩过的坑和经验总结起来写一篇面向小白的Hexo建站教程。</p>
+<span id="more"></span>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>适合你电脑版本的 <a target="_blank" rel="noopener" href="https://www.kernel.org/pub/software/scm/git/">Git</a> </li>
+<li>适合你电脑版本的 <a target="_blank" rel="noopener" href="https://nodejs.org/download/release/">Node.js</a> </li>
+<li>一个 <a target="_blank" rel="noopener" href="https://github.com/">Github</a> 账户</li>
+</ul>
+<p>1.如果你是Windows 7或Windows 8用户，Git v2.46.2 与 Node.js-13.14.0 将会是你所使用系统的最高支持版本<br>2.连接GitHub时可能会出现网络链接被污染情况，推荐使用<a target="_blank" rel="noopener" href="https://steampp.net/">Watt Toolkit</a>加速连接</p>
+<h2 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h2><p>在你的hexo根目录-右键-Git Bash Here，输入</p>
+<pre><code>npm install hexo-cli -g
+</code></pre>
+<p>这一步是在本地全局安装hexo脚手架</p>
+<pre><code>hexo init blog
+</code></pre>
+<p>这一步是在Hexo根目录中创建名为 <code>blog</code> 的网站文件</p>
+<pre><code>cd blog
+</code></pre>
+<p>这里是进入 <code>blog</code> 文件夹中</p>
+<pre><code>npm install
+</code></pre>
+<p>用npm根据 <code>package.json</code> 中的依赖包信息，将依赖包安装到 <code>node_modules</code> 中</p>
+<pre><code>hexo s
+</code></pre>
+<p>在本地运行Hexo框架<br>此时打开浏览器，输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，如果出现Hexo默认界面，即代表成功</p>
+<p><img src="https://hexo.io/themes/screenshots/landscape@2x.jpg" alt="默认界面" title="就像这样"></p>
+<h2 id="加载主题"><a href="#加载主题" class="headerlink" title="加载主题"></a>加载主题</h2><p>如果你对Hexo的默认主题不满意，可以前往 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo官网</a> 的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a>自行寻找自己喜爱的主题样式并根据其安装文档安装主题<br>通常来说，都是需要先进入 <code>blog</code> 文件夹下的 <code>themes</code> 文件夹内，在Git Bash Here中输入形如</p>
+<pre><code>git clone https://github.com/themename/prefix-themename.git themes --depth=1
+</code></pre>
+<p>这样的语句即可将主题文件下载到 <code>themes</code> 文件夹中<br>接着再把 <code>blog</code> 文件夹下的 <code>_config.yml</code> 中 “themes:” 一栏改为你所安装对应主题的名字（默认为landscape）</p>
+
+    </div>
+    
     
     
     
     
-</div>
-
-    </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/head.png" alt="avatar" />
-        </div>
-        <div class="name">ChiDuCD</div>
-        <div class="description">
-            <p>QvQ</p>
-
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
     
 </div>
 
@@ -300,6 +239,12 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
