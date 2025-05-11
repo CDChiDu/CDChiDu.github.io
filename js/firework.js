@@ -21,7 +21,7 @@ function createParticule(e, t) {
 }
 function createCircle(e, t) {
 	var a = {};
-	return a.x = e, a.y = t, a.color = "#F00", a.radius = 0.1, a.alpha = 0.5, a.lineWidth = 6, a.draw = function() {
+	return a.x = e, a.y = t, a.color = "#4C88CD", a.radius = 0.1, a.alpha = 0.5, a.lineWidth = 6, a.draw = function() {
 		ctx.globalAlpha = a.alpha, ctx.beginPath(), ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0), ctx.lineWidth = a.lineWidth, ctx.strokeStyle = a.color, ctx.stroke(), ctx.globalAlpha = 1
 	}, a
 }
@@ -78,7 +78,7 @@ if (canvasEl) {
 		pointerX = 0,
 		pointerY = 0,
 		tap = "mousedown",
-		colors = ["#FF1461", "#18FF92", "#5A87FF", "#FBF38C"],
+		colors = ["#F2BBF4", "#D3BBF6", "#C0BBF6", "#A6BBF6"],
 		setCanvasSize = debounce(function() {
 			canvasEl.width = 2 * window.innerWidth, canvasEl.height = 2 * window.innerHeight, canvasEl.style.width = window.innerWidth + "px", canvasEl.style.height = window.innerHeight + "px", canvasEl.getContext("2d").scale(2, 2)
 		}, 500),
