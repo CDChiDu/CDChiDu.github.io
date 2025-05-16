@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8" />
+    <title>音乐列表 | ChiDuCD</title>
+    <meta name="author" content="ChiDuCD" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/head.png" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>CHIDUCD</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a href="/log">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Log</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;CHIDUCD</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a href="/log">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Log</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>音乐列表</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/5/16
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%94%9F%E6%B4%BB/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                生活
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/music/" style="color: #ffa2c4">
+                    music
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%94%9F%E6%B4%BB/" style="color: #00bcd4">
+                    生活
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <blockquote>
+<h4 id="闲着没事，把自己喜欢的乐曲列个表"><a href="#闲着没事，把自己喜欢的乐曲列个表" class="headerlink" title="闲着没事，把自己喜欢的乐曲列个表"></a>闲着没事，把自己喜欢的乐曲列个表</h4><h5 id="由于我始终只习惯于在手机本地听歌，不喜欢使用音乐软件在线听歌，所以把自己喜欢的乐曲列举在此"><a href="#由于我始终只习惯于在手机本地听歌，不喜欢使用音乐软件在线听歌，所以把自己喜欢的乐曲列举在此" class="headerlink" title="由于我始终只习惯于在手机本地听歌，不喜欢使用音乐软件在线听歌，所以把自己喜欢的乐曲列举在此"></a>由于我始终只习惯于在手机本地听歌，不喜欢使用音乐软件在线听歌，所以把自己喜欢的乐曲列举在此</h5></blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">曲名</th>
+<th align="center">作者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>1</strong></td>
+<td align="center">56 seconds later</td>
+<td align="center">t+pazolite</td>
+</tr>
+<tr>
+<td align="center"><strong>2</strong></td>
+<td align="center">Aegelseeker</td>
+<td align="center">Silentroom &amp; Frum</td>
+</tr>
+<tr>
+<td align="center"><strong>3</strong></td>
+<td align="center">Agartha</td>
+<td align="center">xi</td>
+</tr>
+<tr>
+<td align="center"><strong>4</strong></td>
+<td align="center">ALL MY FALLES</td>
+<td align="center">Frizk</td>
+</tr>
+<tr>
+<td align="center"><strong>5</strong></td>
+<td align="center">Antithese</td>
+<td align="center">Blacklolita</td>
+</tr>
+<tr>
+<td align="center"><strong>6</strong></td>
+<td align="center">Astral Quantization</td>
+<td align="center">DJ Grimoire</td>
+</tr>
+<tr>
+<td align="center"><strong>7</strong></td>
+<td align="center">B.B.K.K.B.K.K.</td>
+<td align="center">nora2r</td>
+</tr>
+<tr>
+<td align="center"><strong>8</strong></td>
+<td align="center">Babaroque</td>
+<td align="center">cYsmix</td>
+</tr>
+<tr>
+<td align="center"><strong>9</strong></td>
+<td align="center">BATTLE NO.1</td>
+<td align="center">TANO*C Sound Team</td>
+</tr>
+<tr>
+<td align="center"><strong>10</strong></td>
+<td align="center">BiBiC Heart</td>
+<td align="center">MYUKKE</td>
+</tr>
+<tr>
+<td align="center"><strong>11</strong></td>
+<td align="center">Bling-Bang-Bang-Born</td>
+<td align="center">Creepy Nuts</td>
+</tr>
+<tr>
+<td align="center"><strong>12</strong></td>
+<td align="center">Bliss</td>
+<td align="center">litmus*</td>
+</tr>
+<tr>
+<td align="center"><strong>13</strong></td>
+<td align="center">Bookmaker</td>
+<td align="center">Kobaryo</td>
+</tr>
+<tr>
+<td align="center"><strong>14</strong></td>
+<td align="center">Brain Power</td>
+<td align="center">NOMA</td>
+</tr>
+<tr>
+<td align="center"><strong>15</strong></td>
+<td align="center">change the game</td>
+<td align="center">REDALICE vs. USAO</td>
+</tr>
+<tr>
+<td align="center"><strong>16</strong></td>
+<td align="center">Chartreuse Green</td>
+<td align="center">t+pazolite</td>
+</tr>
+<tr>
+<td align="center"><strong>17</strong></td>
+<td align="center">Collpsar</td>
+<td align="center">BlackY</td>
+</tr>
+<tr>
+<td align="center"><strong>18</strong></td>
+<td align="center">Computer Cornflakes</td>
+<td align="center">Kobaryo</td>
+</tr>
+<tr>
+<td align="center"><strong>19</strong></td>
+<td align="center">Cthugha</td>
+<td align="center">USAO</td>
+</tr>
+<tr>
+<td align="center"><strong>20</strong></td>
+<td align="center">Datamania</td>
+<td align="center">t+paozlite</td>
+</tr>
+<tr>
+<td align="center"><strong>21</strong></td>
+<td align="center">Daylight</td>
+<td align="center">Seredris</td>
+</tr>
+<tr>
+<td align="center"><strong>22</strong></td>
+<td align="center">Dead soul</td>
+<td align="center">HyuN</td>
+</tr>
+<tr>
+<td align="center"><strong>23</strong></td>
+<td align="center">Designant</td>
+<td align="center">Designant.</td>
+</tr>
+<tr>
+<td align="center"><strong>24</strong></td>
+<td align="center">Dogbite</td>
+<td align="center">t+paolite</td>
+</tr>
+<tr>
+<td align="center"><strong>25</strong></td>
+<td align="center">Ether Strike</td>
+<td align="center">Akira Complex</td>
+</tr>
+<tr>
+<td align="center"><strong>26</strong></td>
+<td align="center">Experience X Einaudi</td>
+<td align="center">Alexandre Pachabezian</td>
+</tr>
+<tr>
+<td align="center"><strong>27</strong></td>
+<td align="center">Fashion week</td>
+<td align="center">BanSy Volar’e</td>
+</tr>
+<tr>
+<td align="center"><strong>28</strong></td>
+<td align="center">flames of fate</td>
+<td align="center">DJ Noriken</td>
+</tr>
+<tr>
+<td align="center"><strong>29</strong></td>
+<td align="center">Fracture Ray</td>
+<td align="center">Sakuzyo</td>
+</tr>
+<tr>
+<td align="center"><strong>30</strong></td>
+<td align="center">Future Downloader</td>
+<td align="center">Kobaryo</td>
+</tr>
+<tr>
+<td align="center"><strong>31</strong></td>
+<td align="center">Good bye,Merry-Go-Round</td>
+<td align="center">Yooh</td>
+</tr>
+<tr>
+<td align="center"><strong>32</strong></td>
+<td align="center">Good Life</td>
+<td align="center">litmus*</td>
+</tr>
+<tr>
+<td align="center"><strong>33</strong></td>
+<td align="center">Grievous Lady</td>
+<td align="center">Laur&#x2F;Team Grimoire</td>
+</tr>
+<tr>
+<td align="center"><strong>34</strong></td>
+<td align="center">Groovy Bunny</td>
+<td align="center">Laur</td>
+</tr>
+<tr>
+<td align="center"><strong>35</strong></td>
+<td align="center">Haunted Dance</td>
+<td align="center">Mr. Asyu</td>
+</tr>
+<tr>
+<td align="center"><strong>36</strong></td>
+<td align="center">IZANA</td>
+<td align="center">t+pazolite、P*Light</td>
+</tr>
+<tr>
+<td align="center"><strong>37</strong></td>
+<td align="center">Kmorebi</td>
+<td align="center">m-katu</td>
+</tr>
+<tr>
+<td align="center"><strong>38</strong></td>
+<td align="center">Lament Rain</td>
+<td align="center">打打だいず&#x2F;Ashrount</td>
+</tr>
+<tr>
+<td align="center"><strong>39</strong></td>
+<td align="center">Le Porteur d’Ombre</td>
+<td align="center">黒皇帝 feat.AKA</td>
+</tr>
+<tr>
+<td align="center"><strong>40</strong></td>
+<td align="center">Let Her Go</td>
+<td align="center">BOF</td>
+</tr>
+<tr>
+<td align="center"><strong>41</strong></td>
+<td align="center">Make Up Your Wolrd</td>
+<td align="center">t+pazolite &amp; Srav3R &amp; rapbit</td>
+</tr>
+<tr>
+<td align="center"><strong>42</strong></td>
+<td align="center">Minecraft Pigstep(remix)</td>
+<td align="center">FlyxTheKid</td>
+</tr>
+<tr>
+<td align="center"><strong>43</strong></td>
+<td align="center">Never Fall Apart</td>
+<td align="center">RiraN</td>
+</tr>
+<tr>
+<td align="center"><strong>44</strong></td>
+<td align="center">New York Back Raise</td>
+<td align="center">saaa、kei_iwata、eihiresan、わかどり</td>
+</tr>
+<tr>
+<td align="center"><strong>45</strong></td>
+<td align="center">NIGHT DANCER</td>
+<td align="center">imase</td>
+</tr>
+<tr>
+<td align="center"><strong>46</strong></td>
+<td align="center">Night Theater</td>
+<td align="center">Akito</td>
+</tr>
+<tr>
+<td align="center"><strong>47</strong></td>
+<td align="center">NULCTRL</td>
+<td align="center">Silentroom</td>
+</tr>
+<tr>
+<td align="center"><strong>48</strong></td>
+<td align="center">On And On!!</td>
+<td align="center">J-CROE</td>
+</tr>
+<tr>
+<td align="center"><strong>49</strong></td>
+<td align="center">Ops:limone</td>
+<td align="center">Reku Mochizuki</td>
+</tr>
+<tr>
+<td align="center"><strong>50</strong></td>
+<td align="center">p.h</td>
+<td align="center">SEVENTHLINKS feat. flower</td>
+</tr>
+<tr>
+<td align="center"><strong>51</strong></td>
+<td align="center">Parallel World</td>
+<td align="center">smv</td>
+</tr>
+<tr>
+<td align="center"><strong>52</strong></td>
+<td align="center">Pentiment</td>
+<td align="center">Nothing But Requiem with Museo</td>
+</tr>
+<tr>
+<td align="center"><strong>53</strong></td>
+<td align="center">PRAGMATISM -RESURRECTION-</td>
+<td align="center">Laur</td>
+</tr>
+<tr>
+<td align="center"><strong>54</strong></td>
+<td align="center">Purgatorium</td>
+<td align="center">お月さま交響曲</td>
+</tr>
+<tr>
+<td align="center"><strong>55</strong></td>
+<td align="center">Shades of Light in a Transcendent Realm</td>
+<td align="center">ak+q</td>
+</tr>
+<tr>
+<td align="center"><strong>56</strong></td>
+<td align="center">Sheriruth</td>
+<td align="center">Team Grimoire</td>
+</tr>
+<tr>
+<td align="center"><strong>57</strong></td>
+<td align="center">SIGMA</td>
+<td align="center">Kry.exe</td>
+</tr>
+<tr>
+<td align="center"><strong>58</strong></td>
+<td align="center">Starlove</td>
+<td align="center">+TEK</td>
+</tr>
+<tr>
+<td align="center"><strong>59</strong></td>
+<td align="center">Straight into the lights</td>
+<td align="center">Cosmograph</td>
+</tr>
+<tr>
+<td align="center"><strong>60</strong></td>
+<td align="center">The Guardians Of The Sun</td>
+<td align="center">RiraN</td>
+</tr>
+<tr>
+<td align="center"><strong>61</strong></td>
+<td align="center">hte world of scarlet</td>
+<td align="center">OfficialAz3</td>
+</tr>
+<tr>
+<td align="center"><strong>62</strong></td>
+<td align="center">TIER SSSS++++BPM</td>
+<td align="center">t+paozlite &amp;Kobaryo</td>
+</tr>
+<tr>
+<td align="center"><strong>63</strong></td>
+<td align="center">Towards the light</td>
+<td align="center">Jacoo</td>
+</tr>
+<tr>
+<td align="center"><strong>64</strong></td>
+<td align="center">Toxic</td>
+<td align="center">t+pazolite</td>
+</tr>
+<tr>
+<td align="center"><strong>65</strong></td>
+<td align="center">ULTRA SYNERGY MATRIX</td>
+<td align="center">Tachiky</td>
+</tr>
+<tr>
+<td align="center"><strong>66</strong></td>
+<td align="center">Unlimited Hyperlink</td>
+<td align="center">Kobaryo</td>
+</tr>
+<tr>
+<td align="center"><strong>67</strong></td>
+<td align="center">Your love Is My Drug</td>
+<td align="center">KeSHa</td>
+</tr>
+<tr>
+<td align="center"><strong>68</strong></td>
+<td align="center">Äventyr</td>
+<td align="center">Grand Thaw</td>
+</tr>
+<tr>
+<td align="center"><strong>69</strong></td>
+<td align="center">あの世行きのバスに乗ってさらば</td>
+<td align="center">ツユ</td>
+</tr>
+<tr>
+<td align="center"><strong>70</strong></td>
+<td align="center">ありふれて花束</td>
+<td align="center">菅原圭</td>
+</tr>
+<tr>
+<td align="center"><strong>71</strong></td>
+<td align="center">うみたがり</td>
+<td align="center">初音ミク MARETU</td>
+</tr>
+<tr>
+<td align="center"><strong>72</strong></td>
+<td align="center">それで充分だよ</td>
+<td align="center">MIMI  feat.Kotoha</td>
+</tr>
+<tr>
+<td align="center"><strong>73</strong></td>
+<td align="center">だまってちゃん</td>
+<td align="center">Chinozo feat.Teto</td>
+</tr>
+<tr>
+<td align="center"><strong>74</strong></td>
+<td align="center">はいよろこんで</td>
+<td align="center">こっちのけんと</td>
+</tr>
+<tr>
+<td align="center"><strong>75</strong></td>
+<td align="center">はぐ</td>
+<td align="center">MIMI &amp; kafu miku</td>
+</tr>
+<tr>
+<td align="center"><strong>76</strong></td>
+<td align="center">ふわり</td>
+<td align="center">ESHIKARA &amp; MIMI feat.kafu miku</td>
+</tr>
+<tr>
+<td align="center"><strong>77</strong></td>
+<td align="center">ぼくの夢、メチャクソ無限湧き</td>
+<td align="center">ARuFa &#x2F; t+pazolite &#x2F; かめりあ</td>
+</tr>
+<tr>
+<td align="center"><strong>78</strong></td>
+<td align="center">またおいで</td>
+<td align="center">south&amp;</td>
+</tr>
+<tr>
+<td align="center"><strong>79</strong></td>
+<td align="center">もういいよ</td>
+<td align="center">こっちのけんと</td>
+</tr>
+<tr>
+<td align="center"><strong>80</strong></td>
+<td align="center">やっぱり雨は降るんだね</td>
+<td align="center">ツユ</td>
+</tr>
+<tr>
+<td align="center"><strong>81</strong></td>
+<td align="center">オドループ</td>
+<td align="center">フレデリック</td>
+</tr>
+<tr>
+<td align="center"><strong>82</strong></td>
+<td align="center">グッバイ宣言</td>
+<td align="center">Chinozo</td>
+</tr>
+<tr>
+<td align="center"><strong>83</strong></td>
+<td align="center">テリトリーバトル</td>
+<td align="center">ツユ</td>
+</tr>
+<tr>
+<td align="center"><strong>84</strong></td>
+<td align="center">テレパシ</td>
+<td align="center">DECO*27</td>
+</tr>
+<tr>
+<td align="center"><strong>85</strong></td>
+<td align="center">ニュートンダンス</td>
+<td align="center">ナユタン星人×Chinozo</td>
+</tr>
+<tr>
+<td align="center"><strong>86</strong></td>
+<td align="center">ハイパーベンチレイション</td>
+<td align="center">RADWIMPS</td>
+</tr>
+<tr>
+<td align="center"><strong>87</strong></td>
+<td align="center">ハッピーフェイクショー</td>
+<td align="center">Ponchi♪ &amp; はぁち</td>
+</tr>
+<tr>
+<td align="center"><strong>88</strong></td>
+<td align="center">ハナタバ</td>
+<td align="center">MIMI 可不</td>
+</tr>
+<tr>
+<td align="center"><strong>89</strong></td>
+<td align="center">バカ通信</td>
+<td align="center">isonnosuke feat.知声</td>
+</tr>
+<tr>
+<td align="center"><strong>90</strong></td>
+<td align="center">バケモノの唄</td>
+<td align="center">Shino</td>
+</tr>
+<tr>
+<td align="center"><strong>91</strong></td>
+<td align="center">ブランディングができない</td>
+<td align="center">Chinozo feat.Kafu</td>
+</tr>
+<tr>
+<td align="center"><strong>92</strong></td>
+<td align="center">マッチ売りの転売ヤー</td>
+<td align="center">謎J &#x2F; 鏡音リン &#x2F; 鏡音レン</td>
+</tr>
+<tr>
+<td align="center"><strong>93</strong></td>
+<td align="center">メモリー</td>
+<td align="center">ギリギリ雾乃</td>
+</tr>
+<tr>
+<td align="center"><strong>94</strong></td>
+<td align="center">ヤキモチ</td>
+<td align="center">高橋優</td>
+</tr>
+<tr>
+<td align="center"><strong>95</strong></td>
+<td align="center">何もしてないのにイヤホンが壊れた</td>
+<td align="center">thom</td>
+</tr>
+<tr>
+<td align="center"><strong>96</strong></td>
+<td align="center">你看，天黑了</td>
+<td align="center">魔鬼花园</td>
+</tr>
+<tr>
+<td align="center"><strong>97</strong></td>
+<td align="center">告白・告別</td>
+<td align="center">nin</td>
+</tr>
+<tr>
+<td align="center"><strong>98</strong></td>
+<td align="center">嗵嗵</td>
+<td align="center">DOUDOU</td>
+</tr>
+<tr>
+<td align="center"><strong>99</strong></td>
+<td align="center">忘れてください</td>
+<td align="center">ヨルシカ</td>
+</tr>
+<tr>
+<td align="center"><strong>100</strong></td>
+<td align="center">拝啓</td>
+<td align="center">PEPOYO</td>
+</tr>
+<tr>
+<td align="center"><strong>101</strong></td>
+<td align="center">死别</td>
+<td align="center">シャノン &#x2F; AkalaKai</td>
+</tr>
+<tr>
+<td align="center"><strong>102</strong></td>
+<td align="center">混沌ブギ</td>
+<td align="center">jon-YAKITORY</td>
+</tr>
+<tr>
+<td align="center"><strong>103</strong></td>
+<td align="center">炜WARD ROMANCE</td>
+<td align="center">FLAVOR FOLEY</td>
+</tr>
+<tr>
+<td align="center"><strong>104</strong></td>
+<td align="center">蜘蛛糸モノポリー</td>
+<td align="center">sasakure.UK feat.初音ミク</td>
+</tr>
+<tr>
+<td align="center"><strong>105</strong></td>
+<td align="center">解答</td>
+<td align="center">MIMI feat.わん子</td>
+</tr>
+<tr>
+<td align="center"><strong>106</strong></td>
+<td align="center">進捗ダメダメです</td>
+<td align="center">GYARI</td>
+</tr>
+<tr>
+<td align="center"><strong>107</strong></td>
+<td align="center">過去に囚われている</td>
+<td align="center">ツユ</td>
+</tr>
+<tr>
+<td align="center"><strong>108</strong></td>
+<td align="center">‽</td>
+<td align="center">NY channel、不定積分</td>
+</tr>
+</tbody></table>
+<blockquote>
+<h5 id="以上列表全部是作者手打的，打了三个小时QAQ"><a href="#以上列表全部是作者手打的，打了三个小时QAQ" class="headerlink" title="以上列表全部是作者手打的，打了三个小时QAQ"></a>以上列表全部是作者手打的，打了三个小时QAQ</h5></blockquote>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2025 - 2025 ChiDuCD
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;ChiDuCD
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/firework.js"></script>
+</html>

@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>Archives | ChiDuCD</title>
+    <title>Tags: 生活 | ChiDuCD</title>
     <meta name="author" content="ChiDuCD" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -39,8 +39,6 @@
 <script src="/js/lib/preview.js"></script>
 
 
-
-<script src="/js/lib/search.js"></script>
 
 
 
@@ -166,132 +164,126 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            
-<div id="archives">
+            <div id="archives">
     
-    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
+    <div class="categories-tags">
+        
+        
+        
+        <span>
+            <a href="/tags/site/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                site
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/hexo/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                hexo
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%8A%80%E6%9C%AF/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/music/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                music
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%94%9F%E6%B4%BB/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                生活
+            </a>
+        </span>
+        
+        
+        
+        
+        
+        <span>
+            <a href="/tags/Github/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Github
+            </a>
+        </span>
+        
+        
+    </div>
     
-    <div id="timeline-wrap" ref="timeline">
-        
-        <div class="timeline" data-title="网站起点">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/5/2</div>
-                <a href="/2025/05/02/hello-world/">
-                    <h3>网站起点</h3>
-                </a>
-                <div class="info">
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2025/5/16</div>
+            <a href="/2025/05/16/music-list/">
+                <h3>音乐列表</h3>
+            </a>
+            <div class="info">
+                
+                <span class="category">
+                    <a href="/categories/%E7%94%9F%E6%B4%BB/">
+                        <span class="icon">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </span>
+                        生活
+                    </a>
+                </span>
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
                     
                     
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="关于hexo建站的教程">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/5/4</div>
-                <a href="/2025/05/04/experience/">
-                    <h3>关于Hexo建站的教程</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E6%8A%80%E6%9C%AF/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
-                            技术
+                    <span class="tag">
+                        
+                        <a href="/tags/music/" style="color: #00a596">
+                            music
                         </a>
                     </span>
                     
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
+                    <span class="tag">
                         
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/site/" style="color: #ff7d73">
-                                site
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/hexo/" style="color: #00a596">
-                                hexo
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E6%8A%80%E6%9C%AF/" style="color: #ffa2c4">
-                                技术
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/Github/" style="color: #03a9f4">
-                                Github
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="音乐列表">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2025/5/16</div>
-                <a href="/2025/05/16/music-list/">
-                    <h3>音乐列表</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/%E7%94%9F%E6%B4%BB/">
-                            <span class="icon">
-                                <i class="fa-solid fa-bookmark fa-fw"></i>
-                            </span>
+                        <a href="/tags/%E7%94%9F%E6%B4%BB/" style="color: #00bcd4">
                             生活
                         </a>
                     </span>
                     
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </span>
-                        
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/music/" style="color: #03a9f4">
-                                music
-                            </a>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/%E7%94%9F%E6%B4%BB/" style="color: #ffa2c4">
-                                生活
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
+                </span>
+                
             </div>
         </div>
-        
     </div>
+    
 </div>
 
             <footer id="footer">
