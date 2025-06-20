@@ -198,28 +198,28 @@
             
             <span class="tag">
                 
-                <a href="/tags/site/" style="color: #00bcd4">
+                <a href="/tags/site/" style="color: #ffa2c4">
                     site
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/hexo/" style="color: #ffa2c4">
+                <a href="/tags/hexo/" style="color: #00bcd4">
                     hexo
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%8A%80%E6%9C%AF/" style="color: #00bcd4">
+                <a href="/tags/%E6%8A%80%E6%9C%AF/" style="color: #00a596">
                     技术
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Github/" style="color: #00a596">
+                <a href="/tags/Github/" style="color: #ff7d73">
                     Github
                 </a>
             </span>
@@ -239,61 +239,58 @@
 </ul>
 <p>1.如果你是Windows 7或Windows 8用户，Git v2.46.2 与 Node.js-13.14.0 将会是你所使用系统的最高支持版本<br>2.连接GitHub时可能会出现网络链接被污染情况，推荐使用<a target="_blank" rel="noopener" href="https://steampp.net/">Watt Toolkit</a>加速连接</p>
 <h2 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h2><p>在你的hexo根目录-右键-Git Bash Here，输入</p>
-<pre><code>npm install hexo-cli -g
+<pre><code class="Bash">npm install hexo-cli -g
 </code></pre>
 <p>这一步是在本地全局安装hexo脚手架</p>
-<pre><code>hexo init blog
+<pre><code class="Bash">hexo init blog
 </code></pre>
 <p>这一步是在Hexo根目录中创建名为 <code>blog</code> 的网站文件</p>
-<pre><code>cd blog
+<pre><code class="Bash">cd blog
 </code></pre>
 <p>这里是进入 <code>blog</code> 文件夹中</p>
-<pre><code>npm install
+<pre><code class="Bash">npm install
 </code></pre>
 <p>用npm根据 <code>package.json</code> 中的依赖包信息，将依赖包安装到 <code>node_modules</code> 中</p>
-<pre><code>hexo s
+<pre><code class="Bash">hexo s
 </code></pre>
 <p>在本地运行Hexo框架<br>此时打开浏览器，输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，如果出现Hexo默认界面，即代表成功</p>
 <p><img src="https://hexo.io/themes/screenshots/landscape@2x.jpg" alt="默认界面" title="就像这样"></p>
 <h2 id="加载主题"><a href="#加载主题" class="headerlink" title="加载主题"></a>加载主题</h2><p>如果你对Hexo的默认主题不满意，可以前往 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo官网</a> 的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a>自行寻找自己喜爱的主题样式并根据其安装文档安装主题<br>通常来说，都是需要先进入 <code>blog</code> 文件夹下的 <code>themes</code> 文件夹内，在Git Bash中输入形如</p>
-<pre><code>git clone https://github.com/themename/prefix-themename.git themes --depth=1
+<pre><code class="Bash">git clone https://github.com/themename/prefix-themename.git themes --depth=1
 </code></pre>
 <p>这样的语句即可将主题文件下载到 <code>themes</code> 文件夹中<br>接着再把 <code>blog</code> 文件夹下的 <code>_config.yml</code> 中 “themes:” 一栏改为你所安装对应主题的名字（默认为landscape）<br>这样就成功安装了主题</p>
 <h2 id="上线网站"><a href="#上线网站" class="headerlink" title="上线网站"></a>上线网站</h2><p>这里使用GitHub来上线网站<br>注册完Github账户之后，需要先绑定SSH密钥。在任意位置打开Git Bash，先后输入并回车</p>
-<pre><code>git config --global user.name &quot;你的GitHub 用户名&quot;
+<pre><code class="Bash">git config --global user.name &quot;你的GitHub 用户名&quot;
 git config --global user.email &quot;你的GitHub 邮箱&quot;
 </code></pre>
 <p>来绑定你的Github账户，接着输入</p>
-<pre><code>ssh-keygen -t rsa -C &quot;你的Github邮箱&quot;
+<pre><code class="Bash">ssh-keygen -t rsa -C &quot;你的Github邮箱&quot;
 </code></pre>
 <p>敲下4次回车，创建SSH密钥。<br>此时在你的 <code>文件夹选项</code> - <code>查看</code> - <code>隐藏文件和文件夹</code> 中勾选 <code>显示隐藏的文件、文件夹和驱动器</code> ，前往 <code>C盘</code> - <code>Users(用户)</code> - <code>用户名</code> - <code>.ssh</code> 中，以用记事本打开 ‘id_rsa.pub’ ，并把里面的密钥内容全部复制出来，打开你的Github账户，点击 <code>头像</code> - <code>Settings</code> - <code>SSH and GPG keys</code> - <code>New SSH key</code> 。其中 <code>Title</code> 一栏随便填，在 <code>key</code> 一栏把你复制的密钥粘贴进去，随后点击 <code>Add SSH key</code> 即可添加密钥。<br>回到Git Bash中，输入</p>
-<pre><code>ssh -T git@github.com
+<pre><code class="Bash">ssh -T git@github.com
 </code></pre>
-<p>来验证你的连接（注意！这一步需要关闭你的加速器），在接下来的提示符中输入”yes”并回车，出现类似了</p>
-<pre><code>Hi 你的Github账户名 ! You&#39;ve successfully……
-</code></pre>
-<p>就代表连接成功。</p>
+<p>来验证你的连接（注意！这一步需要关闭你的加速器），在接下来的提示符中输入”yes”并回车</p>
 <p>接下来，我们来创建Github仓库，在你Github账户主页点击左侧的 Top repositories: <code>New</code>来创建一个新仓库，在 <code>Repository name</code> 一栏中必须输入</p>
-<pre><code>你的Github账户名.github.io
+<pre><code class="Github">你的Github账户名.github.io
 </code></pre>
 <p>格式的字符， 勾选 <code>Public</code> 、 <code>Add a README file</code> ，接着点击 <code>Create repository</code> 来创建一个新仓库</p>
 <p>然后返回到你的 <code>blog</code> 根目录，在Git bash中输入</p>
-<pre><code>npm install hexo-deployer-git --save
+<pre><code class="Bash">npm install hexo-deployer-git --save
 </code></pre>
 <p>以安装Hexo的一键部署功能，如果出现了报错，尝试先后输入并回车</p>
-<pre><code>npm cache clean --force
+<pre><code class="Bash">npm cache clean --force
 npm update -g npm
 npm update
 </code></pre>
 <p>接着再去安装npm依赖，问题便会解决。</p>
 <p>然后打开 <code>blog</code> 文件夹下的 <code>_config.yml</code> ，划到底部，将 <code>deploy</code> 一栏 修改成如下</p>
-<pre><code>deploy:
-   type: git
-   repository: 
-   branch: main
+<pre><code class="yaml">deploy:
+type: git
+repository: 
+branch: main
 </code></pre>
 <p>注意： <code>type</code>  <code>repository</code> 以及 <code>branch</code>前面都应打上2个空格，冒号后都要打上1个空格<br>回到你的Github仓库，点击 <code>&lt; &gt; code</code> ，并将HTTPS下的网址复制下来，粘贴在我们刚才所修改的 <code>repository</code> 一栏后面<br>完成之后，在 <code>blog</code> 下的Git bash 先后输入</p>
-<pre><code>hexo g
+<pre><code class="Bash">hexo g
 hexo d
 </code></pre>
 <p>即可将网站部署在Github仓库上，这时访问你的Github域名 <code>https://用户名.github.io</code> 就可以看到你的Hexo网站了</p>
