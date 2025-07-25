@@ -184,21 +184,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/Site/" style="color: #00bcd4">
+                <a href="/tags/Site/" style="color: #00a596">
                     Site
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #ff7d73">
+                <a href="/tags/Hexo/" style="color: #03a9f4">
                     Hexo
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Github/" style="color: #00a596">
+                <a href="/tags/Github/" style="color: #00bcd4">
                     Github
                 </a>
             </span>
@@ -208,7 +208,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我从2020年开始着手建站，中途使用过<a target="_blank" rel="noopener" href="http://www.jianzhanba.top/">建站吧</a>、<a target="_blank" rel="noopener" href="https://www.sxl.cn/">上线了</a>这种一站式建站，尝试过用<a target="_blank" rel="noopener" href="https://wordpress.org/">Wordpress</a>部署到服务器商的免费服务器上面，还试过用<a target="_blank" rel="noopener" href="https://gohugo.io/">hugo框架</a>部署到GitHub服务器上面，但最后的结果分别是放弃使用、莫名暴毙和中道崩殂。使用Hexo框架建站也不是一帆风顺，就把踩过的坑和经验总结起来写一篇面向小白的Hexo建站教程。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我从2020年开始着手建站，中途使用过<a target="_blank" rel="noopener" href="http://www.jianzhanba.top/">建站吧</a>、<a target="_blank" rel="noopener" href="https://www.sxl.cn/">上线了</a>这种一站式建站，尝试过用<a target="_blank" rel="noopener" href="https://wordpress.org/">Wordpress</a>部署到服务器商的免费服务器上面，还试过用<a target="_blank" rel="noopener" href="https://gohugo.io/">hugo框架</a>部署到GitHub服务器上面，但最后的结果分别是放弃使用、莫名暴毙和中道崩殂。使用Hexo框架建站也不是一帆风顺，就把踩过的坑和经验总结起来写一篇Hexo建站教程。</p>
 <span id="more"></span>
 
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -230,10 +230,15 @@
 <pre><code class="Bash">npm install
 </code></pre>
 <p>用npm根据 <code>package.json</code> 中的依赖包信息，将依赖包安装到 <code>node_modules</code> 中</p>
+<pre><code class="Bash">hexo g
+</code></pre>
+<p>加载出hexo界面</p>
 <pre><code class="Bash">hexo s
 </code></pre>
 <p>在本地运行Hexo框架<br>此时打开浏览器，输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，如果出现Hexo默认界面，即代表成功</p>
 <p><img src="https://hexo.io/themes/screenshots/landscape@2x.jpg" alt="默认界面" title="就像这样"></p>
+<blockquote>
+<h5 id="以上的-hexo-g-与-hexo-s-指令"><a href="#以上的-hexo-g-与-hexo-s-指令" class="headerlink" title="以上的 hexo g 与 hexo s 指令"></a>以上的 <ins>hexo g</ins> 与 <ins>hexo s</ins> 指令</h5><h5 id="将是未来更新与调试网站的常用指令"><a href="#将是未来更新与调试网站的常用指令" class="headerlink" title="将是未来更新与调试网站的常用指令"></a>将是未来更新与调试网站的常用指令</h5></blockquote>
 <h2 id="加载主题"><a href="#加载主题" class="headerlink" title="加载主题"></a>加载主题</h2><p>如果你对Hexo的默认主题不满意，可以前往 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo官网</a> 的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a>自行寻找自己喜爱的主题样式并根据其安装文档安装主题<br>通常来说，都是需要先进入 <code>blog</code> 文件夹下的 <code>themes</code> 文件夹内，在Git Bash中输入形如</p>
 <pre><code class="Bash">git clone https://github.com/themename/prefix-themename.git themes --depth=1
 </code></pre>
