@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="utf-8" />
+    <title>网站编写 | ChiDuCD</title>
+    <meta name="author" content="ChiDuCD" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/head.webp" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>CHIDUCD</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;CHIDUCD</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>网站编写</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/10/3
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Site/" style="color: #ff7d73">
+                    Site
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Hexo/" style="color: #ffa2c4">
+                    Hexo
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Github/" style="color: #00a596">
+                    Github
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #ff7d73">
+                    Markdown
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>曾经在使用早期<a target="_blank" rel="noopener" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine</a>主题时，属实被详细又全面的文档感动到了。如今更换了主题，在内容编写的过程中遇到过不少坎坷，再次写一篇网站内容编写的基础教程</p>
+<span id="more"></span>
+
+<h2 id="Markdown-HTML"><a href="#Markdown-HTML" class="headerlink" title="Markdown&#x2F;HTML"></a>Markdown&#x2F;HTML</h2><h5 id="Markdown官方教程"><a href="#Markdown官方教程" class="headerlink" title="Markdown官方教程"></a><a target="_blank" rel="noopener" href="https://markdown.com.cn/">Markdown官方教程</a></h5><p>· HTML是一种被广泛认可和采用的标记语言，有着重要的地位<br>· Markdown是一种轻量级标记语言，写法简单，Hexo网站的内容编写往往以Markdown为主</p>
+<blockquote>
+<p>Markdown语言可以与HTML混编</p>
+</blockquote>
+<h6 id="在此就简略地列举一些常用的语法以及小提醒："><a href="#在此就简略地列举一些常用的语法以及小提醒：" class="headerlink" title="在此就简略地列举一些常用的语法以及小提醒："></a>在此就简略地列举一些常用的语法以及小提醒：</h6><table>
+<thead>
+<tr>
+<th align="center">语法</th>
+<th align="center">预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>**加粗**</code></td>
+<td align="center"><strong>加粗</strong></td>
+</tr>
+<tr>
+<td align="center"><code>*斜体*</code></td>
+<td align="center"><em>斜体</em></td>
+</tr>
+<tr>
+<td align="center"><code>- 列表</code></td>
+<td align="center">· 列表</td>
+</tr>
+<tr>
+<td align="center"><code>~~删除线~~</code></td>
+<td align="center"><del>删除线</del></td>
+</tr>
+<tr>
+<td align="center"><code>&#39;代码&#39;</code></td>
+<td align="center"><code>代码</code></td>
+</tr>
+<tr>
+<td align="center"><code>[链接](https://markdown.com.cn)</code></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://markdown.com.cn/">链接</a></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;ins&gt;下划线&lt;/ins&gt;</code></td>
+<td align="center"><ins>下划线</ins></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;p style=&quot;text-align:center&quot;&gt;文字居中&lt;/p&gt;</code></td>
+<td align="center"><p style="text-align:center">文字居中</p></td>
+</tr>
+</tbody></table>
+<img align="left" src="https://free.picui.cn/free/2025/10/03/68df8f7220903.webp" width="432" height="">
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="如何书写像左图这样"><a href="#如何书写像左图这样" class="headerlink" title=" 如何书写像左图这样"></a><p style="text-align:center"> 如何书写像左图这样</p></h4><h4 id="左上角标有类型的代码语句呢"><a href="#左上角标有类型的代码语句呢" class="headerlink" title=" 左上角标有类型的代码语句呢"></a><p style="text-align:center"> 左上角标有类型的代码语句呢</p></h4><h4 id="使用围栏代码块"><a href="#使用围栏代码块" class="headerlink" title=" 使用围栏代码块"></a><p style="text-align:center"> 使用<a target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/fenced-code-blocks.html">围栏代码块</a></p></h4><pre><code class="Markdown">```Bash　　
+npm install hexo-cli -g　　
+``` 　　　　　
+</code></pre>
+<p>在围栏代码块的第一行反引号后，写上类型即可</p>
+<blockquote>
+<h6 id="Q：我写完文章后，发现主页的缩略显示了我的文章全部视图，十分冗余，如何解决？"><a href="#Q：我写完文章后，发现主页的缩略显示了我的文章全部视图，十分冗余，如何解决？" class="headerlink" title="Q：我写完文章后，发现主页的缩略显示了我的文章全部视图，十分冗余，如何解决？"></a>Q：我写完文章后，发现主页的缩略显示了我的文章全部视图，十分冗余，如何解决？</h6><h6 id="A：在你想要缩略显示的部分文本下，加上一行即可"><a href="#A：在你想要缩略显示的部分文本下，加上一行即可" class="headerlink" title="A：在你想要缩略显示的部分文本下，加上一行&lt;!-- more --&gt;即可"></a>A：在你想要缩略显示的部分文本下，加上一行<code>&lt;!-- more --&gt;</code>即可</h6></blockquote>
+<blockquote>
+<h6 id="Q：我想使一段独立的文本显示在主页的文章缩略中，怎么办？"><a href="#Q：我想使一段独立的文本显示在主页的文章缩略中，怎么办？" class="headerlink" title="Q：我想使一段独立的文本显示在主页的文章缩略中，怎么办？"></a>Q：我想使一段独立的文本显示在主页的文章缩略中，怎么办？</h6><h6 id="A：在文章前言配置信息部分最后加入"><a href="#A：在文章前言配置信息部分最后加入" class="headerlink" title="A：在文章前言配置信息部分最后加入"></a>A：在文章前言配置信息部分最后加入</h6><pre><code class="Markdown">description: |
+　　缩略文本
+</code></pre>
+</blockquote>
+<h5 id="我们放置图片，有时会希望希望图片能居左或居右，使排版更舒适，我们便可以通过HTML来实现："><a href="#我们放置图片，有时会希望希望图片能居左或居右，使排版更舒适，我们便可以通过HTML来实现：" class="headerlink" title="我们放置图片，有时会希望希望图片能居左或居右，使排版更舒适，我们便可以通过HTML来实现："></a>我们放置图片，有时会希望希望图片能居左或居右，使排版更舒适，我们便可以通过HTML来实现：</h5><pre><code class="HTML">&lt;img align=&quot;left/right(居左或居右)&quot; src=&quot;图片链接&quot; width=&quot;自填&quot; height=&quot;自填&quot;&gt;
+</code></pre>
+<h6 id="其中，left-right选择其一施加效果。width-宽度-与height-高度-，若只填取其一，另一变量会自适应变化"><a href="#其中，left-right选择其一施加效果。width-宽度-与height-高度-，若只填取其一，另一变量会自适应变化" class="headerlink" title="其中，left/right选择其一施加效果。width(宽度)与height(高度)，若只填取其一，另一变量会自适应变化"></a>其中，<code>left/right</code>选择其一施加效果。width(宽度)与height(高度)，若只填取其一，另一变量会自适应变化</h6><h2 id="自定义JS"><a href="#自定义JS" class="headerlink" title="自定义JS"></a>自定义JS</h2><h6 id="如果想要浏览网页时有鼠标点击的烟花特效"><a href="#如果想要浏览网页时有鼠标点击的烟花特效" class="headerlink" title="如果想要浏览网页时有鼠标点击的烟花特效"></a>如果想要浏览网页时有鼠标点击的烟花特效</h6><p>在 <code>themes</code> - <code>主题</code> - <code>source</code> - <code>js</code> 下，创建一个 <code>firework.js</code> 文件，在其中填入</p>
+<pre><code class="JavaScript">&quot;use strict&quot;;
+
+function updateCoords(e) &#123;
+    pointerX = (e.clientX || e.touches[0].clientX) - canvasEl.getBoundingClientRect().left, pointerY = e.clientY || e.touches[0].clientY - canvasEl.getBoundingClientRect().top
+&#125;
+function setParticuleDirection(e) &#123;
+    var t = anime.random(0, 360) * Math.PI / 180,
+        a = anime.random(50, 180),
+        n = [-1, 1][anime.random(0, 1)] * a;
+    return &#123;
+        x: e.x + n * Math.cos(t),
+        y: e.y + n * Math.sin(t)
+    &#125;
+&#125;
+function createParticule(e, t) &#123;
+    var a = &#123;&#125;;
+    return a.x = e, a.y = t, a.color = colors[anime.random(0, colors.length - 1)], a.radius = anime.random(12, 24), a.endPos = setParticuleDirection(a), a.draw = function() &#123;
+        ctx.beginPath(), ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0), ctx.fillStyle = a.color, ctx.fill()
+    &#125;, a
+&#125;
+function createCircle(e, t) &#123;
+    var a = &#123;&#125;;
+    return a.x = e, a.y = t, a.color = &quot;#F00&quot;, a.radius = 0.1, a.alpha = 0.5, a.lineWidth = 6, a.draw = function() &#123;
+        ctx.globalAlpha = a.alpha, ctx.beginPath(), ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0), ctx.lineWidth = a.lineWidth, ctx.strokeStyle = a.color, ctx.stroke(), ctx.globalAlpha = 1
+    &#125;, a
+&#125;
+function renderParticule(e) &#123;
+    for (var t = 0; t &lt; e.animatables.length; t++) &#123;
+        e.animatables[t].target.draw()
+    &#125;
+&#125;
+function animateParticules(e, t) &#123;
+    for (var a = createCircle(e, t), n = [], i = 0; i &lt; numberOfParticules; i++) &#123;
+        n.push(createParticule(e, t))
+    &#125;
+    anime.timeline().add(&#123;
+        targets: n,
+        x: function(e) &#123;
+            return e.endPos.x
+        &#125;,
+        y: function(e) &#123;
+            return e.endPos.y
+        &#125;,
+        radius: 0.1,
+        duration: anime.random(1200, 1800),
+        easing: &quot;easeOutExpo&quot;,
+        update: renderParticule
+    &#125;).add(&#123;
+        targets: a,
+        radius: anime.random(80, 120),
+        lineWidth: 0,
+        alpha: &#123;
+            value: 0,
+            easing: &quot;linear&quot;,
+            duration: anime.random(600, 800)
+        &#125;,
+        duration: anime.random(1200, 1800),
+        easing: &quot;easeOutExpo&quot;,
+        update: renderParticule,
+        offset: 0
+    &#125;)
+&#125;
+function debounce(e, t) &#123;
+    var a;
+    return function() &#123;
+        var n = this,
+            i = arguments;
+        clearTimeout(a), a = setTimeout(function() &#123;
+            e.apply(n, i)
+        &#125;, t)
+    &#125;
+&#125;
+var canvasEl = document.querySelector(&quot;.fireworks&quot;);
+if (canvasEl) &#123;
+    var ctx = canvasEl.getContext(&quot;2d&quot;),
+        numberOfParticules = 30,
+        pointerX = 0,
+        pointerY = 0,
+        tap = &quot;mousedown&quot;,
+        colors = [&quot;#FF1461&quot;, &quot;#18FF92&quot;, &quot;#5A87FF&quot;, &quot;#FBF38C&quot;],
+        setCanvasSize = debounce(function() &#123;
+            canvasEl.width = 2 * window.innerWidth, canvasEl.height = 2 * window.innerHeight, canvasEl.style.width = window.innerWidth + &quot;px&quot;, canvasEl.style.height = window.innerHeight + &quot;px&quot;, canvasEl.getContext(&quot;2d&quot;).scale(2, 2)
+        &#125;, 500),
+        render = anime(&#123;
+            duration: 1 / 0,
+            update: function() &#123;
+                ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
+            &#125;
+        &#125;);
+    document.addEventListener(tap, function(e) &#123;
+        &quot;sidebar&quot; !== e.target.id &amp;&amp; &quot;toggle-sidebar&quot; !== e.target.id &amp;&amp; &quot;A&quot; !== e.target.nodeName &amp;&amp; &quot;IMG&quot; !== e.target.nodeName &amp;&amp; (render.play(), updateCoords(e), animateParticules(pointerX, pointerY))
+    &#125;, !1), setCanvasSize(), window.addEventListener(&quot;resize&quot;, setCanvasSize, !1)
+&#125;
+</code></pre>
+<h6 id="其中的特效颜色与圆圈大小等，均可自行调整"><a href="#其中的特效颜色与圆圈大小等，均可自行调整" class="headerlink" title="其中的特效颜色与圆圈大小等，均可自行调整"></a>其中的特效颜色与圆圈大小等，均可自行调整</h6><p>接着在 <code>themes</code> - <code>主题</code> - <code>layout</code> - <code>layout.jsx</code> 中的 <code>body</code> 标签下末尾，添加上</p>
+<pre><code class="HTML">&lt;canvas class=&quot;fireworks&quot; style=&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot; &gt;&lt;/canvas&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;&gt;&lt;/script&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/firework.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h6 id="即可添加上鼠标点击烟花特效了"><a href="#即可添加上鼠标点击烟花特效了" class="headerlink" title="即可添加上鼠标点击烟花特效了"></a>即可添加上鼠标点击烟花特效了</h6>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2025 - 2025 ChiDuCD
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;ChiDuCD
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/firework.js"></script>
+</html>

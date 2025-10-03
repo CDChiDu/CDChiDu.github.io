@@ -3,7 +3,7 @@
 <html lang="cn">
 <head>
     <meta charset="utf-8" />
-    <title>关于Hexo建站的教程 | ChiDuCD</title>
+    <title>Hexo建站 | ChiDuCD</title>
     <meta name="author" content="ChiDuCD" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>关于Hexo建站的教程</h1>
+        <h1>Hexo建站</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -184,21 +184,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/Site/" style="color: #ffa2c4">
+                <a href="/tags/Site/" style="color: #ff7d73">
                     Site
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #03a9f4">
+                <a href="/tags/Hexo/" style="color: #00a596">
                     Hexo
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Github/" style="color: #00a596">
+                <a href="/tags/Github/" style="color: #03a9f4">
                     Github
                 </a>
             </span>
@@ -208,7 +208,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我从2020年开始着手建站，中途使用过<a target="_blank" rel="noopener" href="http://www.jianzhanba.top/">建站吧</a>、<a target="_blank" rel="noopener" href="https://www.sxl.cn/">上线了</a>这种一站式建站，尝试过用<a target="_blank" rel="noopener" href="https://wordpress.org/">Wordpress</a>部署到服务器商的免费服务器上面，还试过用<a target="_blank" rel="noopener" href="https://gohugo.io/">hugo框架</a>部署到GitHub服务器上面，但最后的结果分别是放弃使用、莫名暴毙和中道崩殂。使用Hexo框架建站也不是一帆风顺，就把踩过的坑和经验总结起来写一篇Hexo建站教程。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我从2020年开始尝试建站，使用过<a target="_blank" rel="noopener" href="http://www.jianzhanba.top/">建站吧</a>、<a target="_blank" rel="noopener" href="https://www.sxl.cn/">上线了</a>这种一站式建站，还尝试过<a target="_blank" rel="noopener" href="https://wordpress.org/">Wordpress</a>部署到服务器商的免费服务器上面，也钻研过<a target="_blank" rel="noopener" href="https://gohugo.io/">hugo框架</a>部署到GitHub服务器上面，但最后的结果分别是放弃使用、莫名暴毙和中道崩殂。使用Hexo框架建站也不是一帆风顺，就把踩过的坑和经验总结起来写一篇Hexo建站教程</p>
 <span id="more"></span>
 
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -216,33 +216,38 @@
 <li>适合你电脑版本的 <a target="_blank" rel="noopener" href="https://nodejs.org/download/release/">Node.js</a> </li>
 <li>一个 <a target="_blank" rel="noopener" href="https://github.com/">Github</a> 账户</li>
 </ul>
+<blockquote>
 <p>1.如果你是Windows 7或Windows 8用户，Git v2.46.2 与 Node.js-13.14.0 将会是你所使用系统的最高支持版本<br>2.连接GitHub时可能会出现网络链接被污染情况，我这边使用<a target="_blank" rel="noopener" href="https://steampp.net/">Watt Toolkit</a>加速连接</p>
-<h2 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h2><p>选择一个文件夹，作为你的博客根目录，在你的博客根目录-右键-Git Bash Here，输入</p>
+</blockquote>
+<h2 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h2><p>在任意位置创建或选择一个<strong>空文件夹</strong>，来存放你的网站根目录。在你的网站根目录中：鼠标右键-Git Bash Here，输入</p>
 <pre><code class="Bash">npm install hexo-cli -g
 </code></pre>
-<p>这一步是在本地全局安装hexo脚手架</p>
+<p>这一步是在本地全局安装hexo脚手架，这样后面才能使用Hexo来建站</p>
 <pre><code class="Bash">hexo init blog
 </code></pre>
-<p>这一步是在Hexo根目录中创建名为 <code>blog</code> 的网站文件</p>
+<p>这一步是在这里中创建名为 <code>blog</code> 的网站根目录文件夹</p>
+<blockquote>
+<p>往后所有的网站内容编辑都将在这个文件夹内进行</p>
+</blockquote>
 <pre><code class="Bash">cd blog
 </code></pre>
-<p>这里是进入 <code>blog</code> 文件夹中</p>
+<p>这里是指将<strong>命令运行工作</strong>转移进入至 <code>blog</code> 文件夹中</p>
 <pre><code class="Bash">npm install
 </code></pre>
 <p>用npm根据 <code>package.json</code> 中的依赖包信息，将依赖包安装到 <code>node_modules</code> 中</p>
 <pre><code class="Bash">hexo g
 </code></pre>
-<p>加载出hexo界面</p>
+<p>渲染加载出网站界面</p>
 <pre><code class="Bash">hexo s
 </code></pre>
-<p>在本地运行Hexo框架<br>此时打开浏览器，输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，如果出现Hexo默认界面，即代表成功</p>
+<p>在本地运行Hexo框架，本地运行网站<br>此时打开浏览器，输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> ，如果出现Hexo默认界面，即代表成功</p>
 <p><img src="https://free.picui.cn/free/2025/08/24/68ab33c8b150a.webp" alt="默认界面" title="就像这样"></p>
 <blockquote>
-<h5 id="以上的-hexo-g-与-hexo-s-指令"><a href="#以上的-hexo-g-与-hexo-s-指令" class="headerlink" title="以上的 hexo g 与 hexo s 指令"></a>以上的 <ins>hexo g</ins> 与 <ins>hexo s</ins> 指令</h5><h5 id="将是未来更新与调试网站的常用指令"><a href="#将是未来更新与调试网站的常用指令" class="headerlink" title="将是未来更新与调试网站的常用指令"></a>将是未来更新与调试网站的常用指令</h5></blockquote>
+<h6 id="以上的-hexo-g-与-hexo-s-指令"><a href="#以上的-hexo-g-与-hexo-s-指令" class="headerlink" title="以上的 hexo g 与 hexo s 指令"></a>以上的 <ins>hexo g</ins> 与 <ins>hexo s</ins> 指令</h6><h6 id="将是未来更新与调试网站的常用指令"><a href="#将是未来更新与调试网站的常用指令" class="headerlink" title="将是未来更新与调试网站的常用指令"></a>将是未来更新与调试网站的常用指令</h6></blockquote>
 <h2 id="加载主题"><a href="#加载主题" class="headerlink" title="加载主题"></a>加载主题</h2><p>如果你对Hexo的默认主题不满意，可以前往 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo官网</a> 的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a>自行寻找自己喜爱的主题样式并根据其安装文档安装主题<br>通常来说，都是需要先进入 <code>blog</code> 文件夹下的 <code>themes</code> 文件夹内，在Git Bash中输入形如</p>
 <pre><code class="Bash">git clone https://github.com/themename/prefix-themename.git themes --depth=1
 </code></pre>
-<p>这样的语句即可将主题文件下载到 <code>themes</code> 文件夹中<br>接着再把 <code>blog</code> 文件夹下的 <code>_config.yml</code> 中 “themes:” 一栏改为你所安装对应主题的名字（默认为landscape）<br>这样就成功安装了主题</p>
+<p>这样的语句即可将主题文件下载到 <code>themes</code> 文件夹中<br>接着再把 <code>blog</code> 文件夹下的 <code>_config.yml</code> 中 <code>themes:</code> 一栏改为你所安装对应主题的名字（默认为landscape）<br>这样就成功安装了主题</p>
 <h2 id="上线网站"><a href="#上线网站" class="headerlink" title="上线网站"></a>上线网站</h2><p>这里使用GitHub来上线网站<br>注册完Github账户之后，需要先绑定SSH密钥。在任意位置打开Git Bash，先后输入并回车</p>
 <pre><code class="Bash">git config --global user.name &quot;你的GitHub 用户名&quot;
 git config --global user.email &quot;你的GitHub 邮箱&quot;
@@ -250,10 +255,10 @@ git config --global user.email &quot;你的GitHub 邮箱&quot;
 <p>来绑定你的Github账户，接着输入</p>
 <pre><code class="Bash">ssh-keygen -t rsa -C &quot;你的Github邮箱&quot;
 </code></pre>
-<p>敲下4次回车，创建SSH密钥。<br>此时在你的 <code>文件夹选项</code> - <code>查看</code> - <code>隐藏文件和文件夹</code> 中勾选 <code>显示隐藏的文件、文件夹和驱动器</code> ，前往 <code>C盘</code> - <code>Users(用户)</code> - <code>用户名</code> - <code>.ssh</code> 中，以用记事本打开 ‘id_rsa.pub’ ，并把里面的密钥内容全部复制出来，打开你的Github账户，点击 <code>头像</code> - <code>Settings</code> - <code>SSH and GPG keys</code> - <code>New SSH key</code> 。其中 <code>Title</code> 一栏随便填，在 <code>key</code> 一栏把你复制的密钥粘贴进去，随后点击 <code>Add SSH key</code> 即可添加密钥。<br>回到Git Bash中，输入</p>
+<p>敲下4次回车，创建SSH密钥。<br>此时在你的 <code>文件夹选项</code> - <code>查看</code> - <code>隐藏文件和文件夹</code> 中勾选 <code>显示隐藏的文件、文件夹和驱动器</code> ，前往 <code>C盘</code> - <code>Users(用户)</code> - <code>用户名</code> - <code>.ssh</code> 中，以用记事本打开 ‘id_rsa.pub’ ，并把里面的密钥内容全部复制出来，打开你的Github账户，点击 <code>头像</code> - <code>Settings</code> - <code>SSH and GPG keys</code> - <code>New SSH key</code> 。其中 <code>Title</code> 一栏随便填，在 <code>key</code> 一栏把你复制的密钥粘贴进去，随后点击 <code>Add SSH key</code> 即可添加密钥<br>回到Git Bash中，输入</p>
 <pre><code class="Bash">ssh -T git@github.com
 </code></pre>
-<p>来验证你的连接（注意！这一步需要关闭你的加速器），在接下来的提示符中输入”yes”并回车</p>
+<p>来验证你的连接<ins>（注意！这一步需要关闭你的加速器）</ins>，在接下来的提示符中输入”yes”并回车</p>
 <p>接下来，我们来创建Github仓库，在你Github账户主页点击左侧的 <code>Top repositories</code> : <code>New</code>来创建一个新仓库，在 <code>Repository name</code> 一栏中必须输入</p>
 <pre><code class="Github">你的Github账户名.github.io
 </code></pre>
@@ -266,18 +271,27 @@ git config --global user.email &quot;你的GitHub 邮箱&quot;
 npm update -g npm
 npm update
 </code></pre>
-<p>接着再去安装npm依赖，问题便会解决。</p>
+<p>接着再去安装npm依赖，问题便会解决</p>
+<blockquote>
+<p>此处报错问题多半是npm版本过低，上方是在更新npm</p>
+</blockquote>
 <p>然后打开 <code>blog</code> 文件夹下的 <code>_config.yml</code> ，划到底部，将 <code>deploy</code> 一栏 修改成如下</p>
 <pre><code class="yaml">deploy:
 type: git
 repository: 
 branch: main
 </code></pre>
-<p>注意： <code>type</code>  <code>repository</code> 以及 <code>branch</code>前面都应打上2个空格，冒号后都要打上1个空格<br>回到你的Github仓库，点击 <code>&lt; &gt; code</code> ，并将HTTPS下的网址复制下来，粘贴在我们刚才所修改的 <code>repository</code> 一栏后面<br>完成之后，在 <code>blog</code> 下的Git bash 先后输入</p>
+<blockquote>
+<p> <code>type</code>  <code>repository</code> 以及 <code>branch</code>前面都应打上2个空格，冒号后都要打上1个空格</p>
+</blockquote>
+<p>回到你的Github仓库，点击 <code>&lt; &gt; code</code> ，并将HTTPS下的网址复制下来，粘贴在我们刚才所修改的 <code>repository</code> 一栏后面<br>完成之后，在 <code>blog</code> 下的Git bash 先后输入</p>
 <pre><code class="Bash">hexo g
 hexo d
 </code></pre>
 <p>即可将网站部署在Github仓库上，这时访问你的Github域名 <code>https://用户名.github.io</code> 就可以看到你的Hexo网站了</p>
+<blockquote>
+<p>此处 <code>hexo g</code> 前文已说明用处， <code>hexo d</code> 则是将网站文件推至与之相关联的Github仓库上面</p>
+</blockquote>
 
     </div>
     
@@ -298,10 +312,6 @@ hexo d
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
             &commat;ChiDuCD
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
         </div>
         
     </div>
