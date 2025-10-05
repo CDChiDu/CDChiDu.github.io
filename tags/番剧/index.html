@@ -46,7 +46,7 @@
 <meta name="twitter:image" content="http://example.com/images/banner.webp">
   
   
-    <link rel="alternate" href="/atom.xml" title="ChiDuCD" type="application/atom+xml">
+    <link rel="alternate" href="/rss.xml" title="ChiDuCD" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/images/ico.ico">
@@ -176,8 +176,10 @@
   </nav>
   <nav id="sub-nav" aria-label="Secondary navigation">
     
-      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a>
+      <a id="nav-rss-link" class="nav-icon" href="/rss.xml" title="RSS Feed" aria-label="RSS Feed" target="_blank"></a>
     
+    
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search" aria-label="Search"></a>
     
   </nav>
   
@@ -342,11 +344,7 @@
     </div>
   
     <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90/">音乐</a>
-    </div>
-  
-    <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E7%95%AA%E5%89%A7/">番剧</a>
+      <a class="archives-tag-list-link" href="/tags/%E9%9F%B3Mad/">音Mad</a>
     </div>
   
     <div class="archives-tag-list-item" data-aos="zoom-in">
@@ -354,11 +352,15 @@
     </div>
   
     <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E9%9F%B3Mad/">音Mad</a>
+      <a class="archives-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
     </div>
   
     <div class="archives-tag-list-item" data-aos="zoom-in">
-      <a class="archives-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
+      <a class="archives-tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90/">音乐</a>
+    </div>
+  
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E7%95%AA%E5%89%A7/">番剧</a>
     </div>
   
 </div>
@@ -527,6 +529,22 @@
 
     </div>
     
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png"/>
+        </div>
+      </div>
+    
     
     
     
@@ -566,6 +584,10 @@
 
 <script src="/js/pjax_script.js" data-pjax></script>
 
+
+
+  
+<script src="/js/generator_search.js" defer></script>
 
 
 
