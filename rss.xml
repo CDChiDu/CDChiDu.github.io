@@ -6,7 +6,7 @@
   <link href="http://example.com/rss.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-10-06T15:16:04.808Z</updated>
+  <updated>2025-11-22T16:18:37.571Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2025/10/04/instead/"/>
     <id>http://example.com/2025/10/04/instead/</id>
     <published>2025-10-03T16:00:00.000Z</published>
-    <updated>2025-10-06T15:16:04.808Z</updated>
+    <updated>2025-11-22T16:18:37.571Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;5&quot;&gt; 更换了一下网站主题，写一下经历&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -44,7 +44,7 @@
     <link href="http://example.com/2025/10/03/education2/"/>
     <id>http://example.com/2025/10/03/education2/</id>
     <published>2025-10-02T16:00:00.000Z</published>
-    <updated>2025-10-06T10:42:16.642Z</updated>
+    <updated>2025-11-22T16:07:32.032Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt; 关于网站内容编写&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -63,11 +63,11 @@
   </entry>
   
   <entry>
-    <title>作品</title>
+    <title>随笔</title>
     <link href="http://example.com/2025/07/06/produce/"/>
     <id>http://example.com/2025/07/06/produce/</id>
     <published>2025-07-05T16:00:00.000Z</published>
-    <updated>2025-10-24T16:28:56.958Z</updated>
+    <updated>2025-11-22T16:03:35.145Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt;随便写写&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -92,7 +92,7 @@
     <link href="http://example.com/2025/06/06/live/"/>
     <id>http://example.com/2025/06/06/live/</id>
     <published>2025-06-05T16:00:00.000Z</published>
-    <updated>2025-11-04T14:14:10.807Z</updated>
+    <updated>2025-11-22T16:20:58.708Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt; 我的生活&lt;/font&gt;&lt;/p&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
