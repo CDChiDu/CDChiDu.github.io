@@ -67,7 +67,7 @@
     <link href="http://example.com/2025/07/06/produce/"/>
     <id>http://example.com/2025/07/06/produce/</id>
     <published>2025-07-05T16:00:00.000Z</published>
-    <updated>2025-11-22T16:03:35.145Z</updated>
+    <updated>2026-01-23T16:50:53.749Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt;随便写写&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -77,13 +77,9 @@
     <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="音乐" scheme="http://example.com/tags/%E9%9F%B3%E4%B9%90/"/>
-    
     <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="音Mad" scheme="http://example.com/tags/%E9%9F%B3Mad/"/>
-    
-    <category term="游戏" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="测评" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%84/"/>
     
   </entry>
   
@@ -92,7 +88,7 @@
     <link href="http://example.com/2025/06/06/live/"/>
     <id>http://example.com/2025/06/06/live/</id>
     <published>2025-06-05T16:00:00.000Z</published>
-    <updated>2025-12-14T04:44:11.709Z</updated>
+    <updated>2026-01-23T17:09:17.982Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt; 我的生活&lt;/font&gt;&lt;/p&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -108,6 +104,8 @@
     
     <category term="游戏" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F/"/>
     
+    <category term="测评" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%84/"/>
+    
   </entry>
   
   <entry>
@@ -115,7 +113,7 @@
     <link href="http://example.com/2025/05/30/list/"/>
     <id>http://example.com/2025/05/30/list/</id>
     <published>2025-05-29T16:00:00.000Z</published>
-    <updated>2026-01-14T14:53:40.981Z</updated>
+    <updated>2026-01-23T17:02:17.700Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt; 音乐 番剧 漫画 轻小说&lt;/font&gt;&lt;/p&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
