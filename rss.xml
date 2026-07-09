@@ -6,7 +6,7 @@
   <link href="http://example.com/rss.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2026-07-08T17:52:57.929Z</updated>
+  <updated>2026-07-09T17:13:30.501Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2026/07/09/steamgameiconswrong/"/>
     <id>http://example.com/2026/07/09/steamgameiconswrong/</id>
     <published>2026-07-08T16:00:00.000Z</published>
-    <updated>2026-07-08T17:52:57.929Z</updated>
+    <updated>2026-07-09T17:13:30.501Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;5&quot;&gt; 关于解决Steam下载游戏后图标空白的解决方法&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -192,11 +192,11 @@
     
     <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
-    <category term="测评" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%84/"/>
-    
     <category term="音Mad" scheme="http://example.com/tags/%E9%9F%B3Mad/"/>
     
     <category term="游戏" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+    <category term="测评" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%84/"/>
     
   </entry>
   
