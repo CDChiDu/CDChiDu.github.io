@@ -6,7 +6,7 @@
   <link href="http://example.com/rss.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2026-07-09T17:13:30.501Z</updated>
+  <updated>2026-07-08T16:23:53.550Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>steamiconswrong</title>
+    <link href="http://example.com/2026/07/09/steamiconswrong/"/>
+    <id>http://example.com/2026/07/09/steamiconswrong/</id>
+    <published>2026-07-08T16:23:53.000Z</published>
+    <updated>2026-07-08T16:23:53.550Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;script src=&quot;https://giscus.app/client.js&quot;
+        data-repo=&quot;CDChiDu/Discussion&quot;
+        data-repo-id=&quot;R_kgDOP9AKpA&quot;
+       </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Steam下载游戏图标缺失</title>
@@ -180,7 +204,7 @@
     <link href="http://example.com/2025/04/05/live/"/>
     <id>http://example.com/2025/04/05/live/</id>
     <published>2025-04-04T16:00:00.000Z</published>
-    <updated>2026-07-08T16:10:39.907Z</updated>
+    <updated>2026-07-10T14:31:51.989Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt;&lt;p style=&quot;text-align:center&quot;&gt; 我的生活&lt;/font&gt;&lt;/p&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -192,11 +216,11 @@
     
     <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
+    <category term="测评" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%84/"/>
+    
     <category term="音Mad" scheme="http://example.com/tags/%E9%9F%B3Mad/"/>
     
     <category term="游戏" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-    <category term="测评" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%84/"/>
     
   </entry>
   
