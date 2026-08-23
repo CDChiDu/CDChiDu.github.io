@@ -90,7 +90,7 @@
     <link href="http://example.com/2025/07/06/produce/"/>
     <id>http://example.com/2025/07/06/produce/</id>
     <published>2025-07-05T16:00:00.000Z</published>
-    <updated>2026-08-08T15:12:37.206Z</updated>
+    <updated>2026-08-23T04:42:27.733Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;font size=&quot;6&quot;&gt;随便写写&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
@@ -121,11 +121,11 @@
     <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
     <category term="音乐" scheme="http://example.com/tags/%E9%9F%B3%E4%B9%90/"/>
     
     <category term="番剧" scheme="http://example.com/tags/%E7%95%AA%E5%89%A7/"/>
-    
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -190,9 +190,9 @@
     <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    
     <category term="音Mad" scheme="http://example.com/tags/%E9%9F%B3Mad/"/>
+    
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
     <category term="游戏" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F/"/>
     
